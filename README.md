@@ -2,13 +2,13 @@
 
 This project has been submitted to the Laboratory of Information Photonics and Optical Metrology, Department of Physics, Indian Institute of Technology (BHU), Varanasi for the award of the Integrated Dual Degree in Engineering Physics.
 
-The repository builds an end-to-end user oriented framework for AI assisted quantitatve phase imaging for automated segmentation, feature exraction, and prediction of anomalies in red blood cells. In a nutshell, the application inputs raw hologram and finally returns a preditive analysis.
+This repository provides an end-to-end user-oriented framework for AI-assisted quantitative phase imaging, enabling automated segmentation, feature extraction, and anomaly prediction in red blood cells.
 
 ## Description of Folders
 
 1. The 'training' folder contains files associated with generation of the dataset (`generate_dataset.py`) and then training and comparison of models (`analyze_data.ipynb`). The trained model, features used, threshold and other metadata is saved to the 'models' folder through the `analyze_data.ipynb` file.
 
-2. The 'backend' folder consists of the main functions that are used to process the data in the application. The `pipeline.py` file is the connection between the 'aaplication' folder and the 'backend'.
+2. The 'backend' folder consists of the main functions that are used to process the data in the application. The `pipeline.py` file is the connection between the 'application' folder and the 'backend'.
 
 3. The 'application' folder contains the files associated with various tabs within the application, along with the dialog boxes and logger. The `worker.py` runs computationally expensive tasks (model loading, hologram reconstruction, and image analysis) in background threads, while communicating with the GUI through signals for progress updates, completion, errors, and cancellation, so that the PyQt interface never freezes during processing.
 
@@ -38,9 +38,9 @@ application/main.py
 
 This will save the .exe to a new folder called 'build'. The first run of the application might take a couple of minutes to open due to system checks.
 
-[!NOTE]
-1. The segmentation process takes a couple of minutes to complete during which the progress bar stays stuck at 30% since it was challenging to obtain the progress while the Cellpose model is running in the background.
-2. The better the reconstruction, the better will be the segmentation and prediction results.
+> [!NOTE]
+> 1. The segmentation process takes a couple of minutes to complete, during which the progress bar remains at 30%, since it was challenging to obtain progress information while the Cellpose model is running in the background.
+> 2. The better the reconstruction, the better the segmentation and prediction results.
 
 ## Copyright
 
